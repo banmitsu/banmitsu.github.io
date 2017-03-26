@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <title>VMware Workstation 12 Pro Performance increment | fj</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="description" content="As I try to train my model using keras, backend=theano on my VM, OS: ubuntu 14.04, I found the performance is dreadful by default setting. Therefore, I found some useful instructions to speed up VM.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VMware Workstation 12 Pro Performance increment">
+<meta property="og:url" content="https://banmitsu.github.io/fj/2016/07/07/2016-07-07-vmware-performance/index.html">
+<meta property="og:site_name" content="fj">
+<meta property="og:description" content="As I try to train my model using keras, backend=theano on my VM, OS: ubuntu 14.04, I found the performance is dreadful by default setting. Therefore, I found some useful instructions to speed up VM.">
+<meta property="og:updated_time" content="2017-03-26T09:25:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VMware Workstation 12 Pro Performance increment">
+<meta name="twitter:description" content="As I try to train my model using keras, backend=theano on my VM, OS: ubuntu 14.04, I found the performance is dreadful by default setting. Therefore, I found some useful instructions to speed up VM.">
+  
+    <link rel="alternative" href="/atom.xml" title="fj" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+    
+  <meta content="{{ title }}" name="description">
+  <meta content="{{ title }}" name="keywords">
+  <meta content="{{ title }}" name="author">
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+
+  <!-- Global styles START -->   
+  <link rel="stylesheet" href="/source/metronic/assets/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/source/metronic/assets/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  <link rel="stylesheet" href="/source/metronic/assets/pages/css/animate.css">
+  <link rel="stylesheet" href="/source/metronic/assets/plugins/owl.carousel/assets/owl.carousel.css">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+  <link rel="stylesheet" href="/source/metronic/assets/pages/css/components.css">
+  <link rel="stylesheet" href="/source/metronic/assets/pages/css/slider.css">
+  <link rel="stylesheet" href="/source/metronic/assets/corporate/css/style.css">
+  <link rel="stylesheet" href="/source/metronic/assets/pages/css/portfolio.css">
+  <link rel="stylesheet" href="/source/metronic/assets/corporate/css/style-responsive.css">
+  <link rel="stylesheet" href="/source/metronic/assets/corporate/css/themes/red.css">
+  <link rel="stylesheet" href="/source/css/theme-styles.css">
+  <!-- Theme styles END -->
+</head>
+
+<body class="corporate">
+  <!-- BEGIN HEADER -->
+<div class="header">
+  <div class="container">
+    <!--<a class="site-logo" href="/source/" id="logo">fj</a>-->
+
+    <a class="site-logo" href="/">
+      <img src="/source/metronic/assets/corporate/img/logos/logo-corp-red.png" alt="Metronic FrontEnd">
+    </a>
+
+    <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
+    <!-- BEGIN NAVIGATION -->
+    <div class="header-navigation pull-right font-transform-inherit">
+      <ul>
+	
+	<li class="">
+	  <a  href="/source/">Home</a>
+	</li>
+	
+	<li class="">
+	  <a  href="/source/archives/">Blog</a>
+	</li>
+	
+	<!-- BEGIN TOP SEARCH -->
+	<li class="menu-search">
+	  <span class="sep"></span>
+	  <i class="fa fa-search search-btn"></i>
+	  <div class="search-box">
+	    <form action="#">
+	      <div class="input-group">
+		<input type="text" placeholder="Search" class="form-control st-default-search-input">
+		<span class="input-group-btn">
+		  <button class="btn btn-primary" type="submit">Search</button>
+		</span>
+	      </div>
+	    </form>
+	  </div> 
+	</li>
+	<!-- END TOP SEARCH -->
+      </ul>
+    </div>
+    <!-- END NAVIGATION -->
+  </div>
+</div>
+<!-- Header END -->
+
+  <div class="container">
+  <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/archives/">Blog</a></li>
+    <li class="active">Post</li>
+  </ul>
+  <section id="main">
+    
+    <h2 itemprop="name">
+      <a class="article-title" href="/source/2016/07/07/2016-07-07-vmware-performance/">VMware Workstation 12 Pro Performance increment</a>
+    </h2>
+
+
+    <div class="row">
+<div class="col-md-9 col-sm-9 blog-posts">
+<article id="post-2016-07-07-vmware-performance" class="article article-type-post blog-item" itemscope itemprop="blogPost">
+  <div class="article-meta">
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      <ul class="blog-info">
+	<li><i class="fa fa-user"></i> Anonymous</li>
+	<li><i class="fa fa-calendar"></i>
+	  <time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016/07/07</time>
+
+	</li>
+	<li class="hidden-xs"><i class="fa fa-comments"></i>
+	  <a href="https://banmitsu.github.io/fj/source/2016/07/07/2016-07-07-vmware-performance/#disqus_thread" class="article-comment-link">Comments</a>
+	</li>
+	<li class="hidden-xs"><i class="fa fa-tags"></i> 
+	  
+  
+    <a href="/source/tags/How-To/" title="How-To">How-To</a>,
+  
+    <a href="/source/tags/VMware/" title="VMware">VMware</a>
+  
+
+
+	</li>
+      </ul>
+      
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>As I try to train my model using keras, backend=theano on my VM, OS: ubuntu 14.04, I found the performance is dreadful by default setting. Therefore, I found some useful instructions to speed up VM.</p>
+<a id="more"></a>
+<h2 id="Disk-I-O-vRAM"><a href="#Disk-I-O-vRAM" class="headerlink" title="Disk I/O / vRAM"></a>Disk I/O / vRAM</h2><p>The host’s memory is, e.g, 32GB ram.<br>Assign 10GB to vm (1/3)</p>
+<p>(1) Edit vm.vmx</p>
+<figure class="highlight bash"><figcaption><span>.vmx</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">MemTrimRate = <span class="string">"0"</span></div><div class="line">sched.mem.pshare.enable = <span class="string">"FALSE"</span></div><div class="line">mainMem.useNamedFile = <span class="string">"FALSE"</span></div><div class="line">MemAllowAutoScaleDown = <span class="string">"FALSE"</span></div><div class="line">priority.grabbed = <span class="string">"high"</span></div><div class="line">priority.ungrabbed = <span class="string">"normal"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>MemTrimRate=0, disable <a href="https://www.vmware.com/support/ws5/doc/ws_performance_diskio.html" target="_blank" rel="external">memory trimming</a></p>
+</li>
+<li><p>Workstation uses a memory trimming technique to de-allocate unused virtual machine memory for the host to re-allocate. Trimming usually has little impact on performance, and it may be needed in low memory situations. However, memory trimming can interfere with disk-oriented performance in a guest.</p>
+</li>
+<li><p>設定MemTrimRate=0後，原本分配給vm的記憶體閒置後將不會被host回收，所以vm會運作得較快速。<br>(p.s. 若mainMem.useNamedFile=”TRUE”,memory trimming可能會對影響disk I/O)</p>
+</li>
+<li><p>sched.mem.pshare.enable = “FALSE”, disable <a href="https://www.vmware.com/support/ws5/doc/ws_performance_diskio.html" target="_blank" rel="external">page sharing</a></p>
+</li>
+<li><p>VMware uses a page sharing technique to allow guest memory pages with identical contents to be stored as a single copy-on-write page. Page sharing decreases host memory usage, but consumes system resources, potentially including I/O bandwidth.</p>
+</li>
+<li><p>停用memory sharing後，vm就停止比對記憶體，將相同的內容存在同一個page內來達到減用vm memory的使用量。</p>
+</li>
+<li><p>mainMem.useNamedFile = “FALSE”</p>
+</li>
+<li><p>MemAllowAutoScaleDown = “FALSE”</p>
+</li>
+</ul>
+<p>(2) Edit C:\ProgramData\VMware\VMware Workstation\config.ini<br><figure class="highlight coffee"><figcaption><span>config.ini</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">prefvmx.minVmMemPct = <span class="string">"100"</span></div><div class="line">prefvmx.useRecommendedLockedMemSize = <span class="string">"TRUE"</span></div><div class="line">mainMem.partialLazySave = <span class="string">"FALSE"</span></div><div class="line">mainMem.partialLazyRestore = <span class="string">"FALSE"</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>prefvmx.minVmMemPct = “100”</p>
+</li>
+<li><p>prefvmx.useRecommendedLockedMemSize = “TRUE”</p>
+</li>
+</ul>
+<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p>Inspect host’s CPU, (e.g., i7-6700, 8 cores)<br>number of processors: 1<br>number of cores per processor: 4-6<br>preferred mode: Inter VT-x/EPT or AMD-V/RVI</p>
+<ul>
+<li>Virtualize Inter VT-x/EPT or AMD-V/RVI checked.</li>
+<li>Virtualize CPU performance counters checked.</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[<a href="https://gist.github.com/wpivotto/3993502" target="_blank" rel="external">https://gist.github.com/wpivotto/3993502</a>] (<a href="https://gist.github.com/wpivotto/3993502" target="_blank" rel="external">https://gist.github.com/wpivotto/3993502</a>)</p>
+
+      
+    </div>
+  </div>
+  
+    
+  
+  <br>
+</article>
+
+
+
+
+</div>
+<div class="col-md-3 col-sm-3 blog-sidebar">
+  <!-- BEGIN BLOG TAGS -->
+<div class="blog-tags margin-bottom-20">
+  <h2>Tags</h2>
+  
+  <div class="widget-wrap">
+    <div class="widget">
+      
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/source/tags/How-To/"><i class='fa fa-tags'></i>How-To</a></li><li class="tag-list-item"><a class="tag-list-link" href="/source/tags/VMware/"><i class='fa fa-tags'></i>VMware</a></li></ul>
+    </div>
+  </div>
+
+
+</div>
+<!-- END BLOG TAGS -->
+
+
+<!-- BEGIN FEATURED POSTS -->                            
+<h2>Featured Posts</h2>
+<div class="recent-news margin-bottom-10">
+  
+    
+      <div class="row margin-bottom-10">
+	<div class="col-md-4">
+	  <img src="/source/" class="img-responsive ">
+	</div>
+	<div class="col-md-8">
+	  <h3><a href="https://banmitsu.github.io/fj/source/2016/07/07/2016-07-07-vmware-performance/">VMware Workstation 12 Pro Performance increment</a></h3>
+	</div>                        
+      </div>
+    
+  
+</div>
+<!-- END FEATURED POSTS -->                            
+
+</div>
+</div>
+
+  </section>
+</div>
+
+    <!-- BEGIN PRE-FOOTER -->
+    <div class="pre-footer">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+    </div>
+    <!-- END PRE-FOOTER -->
+
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- BEGIN COPYRIGHT -->
+          <div class="col-md-6 col-sm-6 padding-top-10">
+                  &copy; 2017 fj<br>
+ <a href="javascript:;">Privacy Policy</a> | <a href="javascript:;">Terms of Service</a>
+          </div>
+          <!-- END COPYRIGHT -->
+	  <!-- BEGIN SOCIAL -->
+<div class="col-md-6 col-sm-6">
+  <ul class="social-footer list-unstyled list-inline pull-right">
+    
+      <li><a href="https://github.com/banmitsu"><i class="fa fa-github"></i></a></li>
+    
+      <li><a href="/source/atom.xml"><i class="fa fa-rss"></i></a></li>
+    
+      <li><a href="https://linkedin.com/in/felisjhou"><i class="fa fa-linkedin"></i></a></li>
+    
+  </ul>  
+</div>
+<!-- END SOCIAL -->
+
+        </div>
+      </div>
+    </div>
+    <!-- END FOOTER -->
+
+  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+<!--[if lt IE 9]>
+<script src="/source/metronic/assets/plugins/respond.min.js"></script>
+<![endif]--> 
+<script src="/source/metronic/assets/plugins/jquery.min.js"></script>
+<script src="/source/metronic/assets/plugins/jquery-migrate.min.js"></script>
+<script src="/source/metronic/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/source/metronic/assets/corporate/scripts/back-to-top.js"></script>
+<script src="/source/metronic/assets/plugins/owl.carousel/owl.carousel.min.js"></script>
+<script src="/source/metronic/assets/corporate/scripts/layout.js"></script>
+<script src="/source/js/wow.min.js"></script>
+
+
+  <link rel="stylesheet" href="/source/fancybox/jquery.fancybox.css">
+  <script src="/source/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();    
+        Layout.initOWL();
+        Layout.initTwitter();
+        Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+        Layout.initNavScrolling(); 
+	new WOW().init();
+    });
+</script>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE-SPECIFIC PLUGINS --> 
+
+
+
+
+
+
+
+<!-- END PAGE-SPECIFIC PLUGINS --> 
+
+<!-- BEGIN INTEGRATIONS -->
+
+
+
+
+
+<!-- END INTEGRATIONS -->
+
+</body>
+</html>
